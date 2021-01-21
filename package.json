@@ -2,10 +2,9 @@
   "name": "server",
   "version": "1.0.0",
   "description": "grandstow backend",
-  "main": "index.js",
+  
   "scripts": {
-    
-    "start": "node index.js"
+   "start": "node ./src/index.js"
   },
   "author": "",
   "license": "ISC",
