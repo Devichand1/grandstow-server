@@ -2,9 +2,8 @@
   "name": "server",
   "version": "1.0.0",
   "description": "grandstow backend",
-  
   "scripts": {
-   "start": "node ./src/index.js"
+    "start": "node ./src/index.js"
   },
   "author": "",
   "license": "ISC",
@@ -12,6 +11,9 @@
     "node": "10.x"
   },
   "dependencies": {
-    "express": "^4.17.1"
+    "bcrypt": "^5.0.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.11.13"
   }
 }
