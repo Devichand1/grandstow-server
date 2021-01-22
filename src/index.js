@@ -1,6 +1,7 @@
 const express = require('express');
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 2000;
 const app = express();
+const cors = require('cors')
 const mongoose = require("mongoose");
 const env = require("dotenv");
 const authRoutes = require('./routes/auth');
@@ -23,7 +24,7 @@ mongoose.connect(
      .catch(err => console.log(err));
 
 
-
+     app.use(cors());
 app.get('/category/getcategory', function (req, res) {
  res.send('res');
 });
