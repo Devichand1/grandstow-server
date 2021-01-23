@@ -4,6 +4,7 @@ const { default: slugify } = require('slugify');
 
 exports.createproduct = (req, res) =>{
     // res.status(200).json({ file: req.files, body:req.body });
+    res.setHeader("Access-Control-Allow-Origin", "*")
 const {
     name,price,writter, publication ,category,quantity,tag
 }= req.body;
