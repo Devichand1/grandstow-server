@@ -2,28 +2,28 @@ const Product = require('../models/product')
 const shortid =require("shortid");
 const { default: slugify } = require('slugify');
 
-exports.createproduct = function (req, res) {
+exports.createproduct = (req, res) =>{
     // res.status(200).json({ file: req.files, body:req.body });
 const {
-    name,price,description,category,quantity,createdBy
+    name,price,writter, publication ,category,quantity,tag
 }= req.body;
 
-let productpicture=[];
-if(req.files.length >0){
-    productpicture= req.files.map(file=>{
-        return {img:file.filename}
-    })
-}
+ 
 
+   const productpicture = req.file;
+
+ 
     const product = new Product({
-        name:req.body.name,
-        slug:slugify(name),
-        price,
-        description,
+        name ,
+         slug:slugify(name),
+        price ,
+        tag,
+        writter  ,
+        publication ,
         productpicture,
         quantity,
-        createdBy:req.user._id,
-        category
+        // createdBy:req.user._id,
+        category,
     
     })
     product.save(((error,product)=>{

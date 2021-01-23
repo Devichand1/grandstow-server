@@ -10,7 +10,7 @@ const productschema = new mongoose.Schema({
     slug:{
         type:String,
         required:true,
-        unique:true
+     unique:true
     },
     
     price:{
@@ -18,10 +18,15 @@ const productschema = new mongoose.Schema({
         required:true,
 
     },
-    description:{
+    writter:{
         type:String,
         required:true,
         trim:true
+    },
+    publication:{
+        type:String,
+        required: true,
+
     },
     quantity:{
          type:Number,
@@ -31,13 +36,20 @@ const productschema = new mongoose.Schema({
     offer:{
         type:Number
     },
+    // productpicture:[
+    //     {
+    //         img:{
+    //             type:String
+               
+    //         }
+    //     }
+        
+    // ],
     productpicture:[
         {
-            img:{
-                type:String
-            }
-        }
+       img:{ type: String,}}
     ],
+   
     reviews:[
         {
             userid:{type: mongoose.Schema.Types.ObjectId, ref:'User'},
@@ -45,14 +57,19 @@ const productschema = new mongoose.Schema({
         }
     ],
     category:{
-        type:mongoose.Schema.Types.ObjectId, 
-        ref:'Category',
+        type:String, 
+      
+        required:true
+    },
+    tag:{
+        type:String, 
+        
         required:true
     },
     createdBy:{
         type:mongoose.Schema.Types.ObjectId, 
         ref:'User',
-        required:true
+       
     },
     updatedAt: Date,
 

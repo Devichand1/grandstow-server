@@ -9,6 +9,9 @@ const productRoutes = require('./routes/product');
 const cartRoutes = require('./routes/cart');
 const cart = require('./models/cart');
 const product = require('./models/product');
+const bodyParser = require('body-parser');
+const multer = require('multer');
+const path = require('path')
 env.config();
 mongoose.connect(
     ` mongodb+srv://${process.env.MONGO_DB_USER}:${process.env.MONGO_DB_PASSWORD}@cluster0.fuodx.mongodb.net/${process.env.MONDO_DB_DATATBASE }?retryWrites=true&w=majority`, 
@@ -23,8 +26,11 @@ mongoose.connect(
      )
      .catch(err => console.log(err));
 
-
-     app.use(cors());
+    //  app.use(multer().array())
+    
+app.use(cors());
+app.use( express.json());
+app.use('/public', express.static(path.join(__dirname,'uploads')))
 app.get('/category/getcategory', function (req, res) {
  res.send('res');
 });
