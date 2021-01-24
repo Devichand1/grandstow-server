@@ -36,20 +36,16 @@ const productschema = new mongoose.Schema({
     offer:{
         type:Number
     },
-    // productpicture:[
-    //     {
-    //         img:{
-    //             type:String
-               
-    //         }
-    //     }
-        
-    // ],
     productpicture:[
         {
-       img:{ type: String,}}
+            img:{
+                type:String
+            }   
+            
+        }
+        
     ],
-   
+
     reviews:[
         {
             userid:{type: mongoose.Schema.Types.ObjectId, ref:'User'},
