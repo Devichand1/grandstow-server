@@ -6,13 +6,13 @@ exports.createproduct = (req, res) =>{
     // res.status(200).json({ file: req.files, body:req.body });
     res.setHeader("Access-Control-Allow-Origin", "*")
 const {
-    name,price,writter, publication ,category,quantity,tag
+    name,price,writter, publication ,category,quantity,tag, picname
 }= req.body;
 
  
 
    const productpicture = req.file;
-
+    
  
     const product = new Product({
         name ,
@@ -22,6 +22,7 @@ const {
         writter  ,
         publication ,
         productpicture,
+        picname ,
         quantity,
         // createdBy:req.user._id,
         category,

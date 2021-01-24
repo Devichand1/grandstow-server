@@ -45,6 +45,10 @@ const productschema = new mongoose.Schema({
         }
         
     ],
+    picname:{
+        type: String,
+        
+    },
 
     reviews:[
         {
