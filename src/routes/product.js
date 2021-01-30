@@ -31,7 +31,7 @@ var storage = multer.diskStorage({
  var upload = multer({ storage })
 
 
- router.post('/product/create',upload.single('productpicture'), createproduct );
+ router.post('/product/create',upload.single("productpicture"), createproduct );
 // router.post('/product/create' , createproduct );
  router.get('/product/getproducts', getcategories );
 

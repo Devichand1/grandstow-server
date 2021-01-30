@@ -16,7 +16,7 @@ const {
  
     const product = new Product({
         name ,
-         slug:slugify(name),
+         slug:slugify(`${name}`),
         price ,
         tag,
         writter  ,
