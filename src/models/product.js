@@ -20,7 +20,7 @@ const productschema = new mongoose.Schema({
     },
     writter:{
         type:String,
-        required:true,
+    
         trim:true
     },
     publication:{
